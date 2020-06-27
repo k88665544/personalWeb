@@ -1,0 +1,178 @@
+/* CSS reset開始 */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS reset結束 */
+/* 首頁開始 */
+/* topBar開始 */
+.home{
+    height: 1080px;
+    background-color: #2A2A2A;
+}
+
+.topArea{
+    /* background-color: rgb(0, 0, 0); */
+    width: 100%;
+    /* height: 55px; */
+    height: 70px;
+}
+
+.topBar{
+    background-color: seagreen;
+    display: flex;
+    justify-content: space-between;
+    margin-left:140px;
+    margin-right:140px;
+    margin-bottom: 85px;
+}
+
+.content{
+    background-color: rgb(71, 255, 132);
+    margin:0 140px;
+    height: 500px;
+}
+
+ 
+.portfolio{
+    /* background-color: #E42323; */
+    width: 270px;
+    height: 55px;
+    height: 5vh;
+    display: flex;
+}
+
+
+.LOGO{
+    background-color: white;
+    width: 52px;
+    height: 55px;
+}
+
+.title{
+    /* background-color: rgb(68, 65, 224); */
+    width: 218px;
+    text-align: center;
+    font-family: "Segoe UI";
+    font-weight: bold;
+}
+
+.subTitle{
+    margin-right: 6px;
+    text-align: right;
+}
+
+.maintitle{
+    font-size: 39px;
+    color: #E42323;
+    font-weight: bold;
+}
+
+.subTitle{
+    font-size: 15px;
+    color: #E42323;
+}
+
+.jump{
+    /* background-color: #E42323; */
+    width: 430px;
+    height: 55px;
+    font-size: 20px;
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+    font-family: "Microsoft JhengHei";
+}
+
+.topHref{
+    color: white;
+    text-decoration: none;
+}
+/* topBar結束 */
+
+.container{
+    background-color: teal;
+    margin: 0 140px;
+    height: 82vh;
+    display: flex;
+}
+/* HI內容區塊開始 */
+
+
+
+
+
+
+
+
+
+
+
+
+/* HI內容區塊結束 */
+/* 首頁結束 */
+
+
+
+.aboutMe{
+    height: 100vh;
+    background-color: brown;
+}
+
+.works{
+    height: 100vh;
+    background-color: rgb(42, 81, 165);
+}
+
+.become{
+    height: 100vh;
+    background-color: rgb(42, 165, 83);
+}
+
+

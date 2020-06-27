@@ -1,0 +1,27 @@
+*單位vh 是 view height 螢幕可視範圍高度比
+     vw 是 view weight 螢幕可視範圍寬度比
+
+
+*錨點效果https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/55259/
+ 第一種方法，也是最簡單的方法是錨點用<a>標籤，在href屬性中寫入DIV的id。如下：
+
+ 範例
+   <!DOCTYPE html>
+   <html>
+   <body>
+   <h2>
+   <a href="#div1">to div1</a>
+   <a href="#div2">to div2</a>
+   <a href="#div3">to div3</a>
+   </h2>
+   <div id="div1">div1</div>
+   <div id="div2">div2</div>
+   <div id="div3">div3</div>
+   </body>
+   </html>
+
+
+*FLEX教學
+ https://codepen.io/peiqun/pen/WYzzYX?fbclid=IwAR1AZiXQ_q21ZTdZdwt-6MnK7LT3UgruDKlPDK6Grz4VBR7j28Yvi2FfxUY
+
+*如果要讓網頁縮放時是置中縮放, 記得要固定左右兩邊容器寬度(即置中)
