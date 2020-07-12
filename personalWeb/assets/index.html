@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style.css" rel="styleSheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.1/velocity.min.js"></script>
+    <script src="./jquery.easing.1.3.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.2.0.min.js"
+        integrity="sha256-aSe2ZC5QeunlL/w/7PsVKmV+fa0eDbmybn/ptsKHR6I=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class='all' :class="{bodyDark: isNormalMode}">
+            <header>
+                <h1 :class="{h1Dark: isNormalMode}">R.U.的前端開發筆記</h1>
+                <span class="btnBoxNormal" :class="{btnBoxDark: isNormalMode}">
+                    <label>
+                        <!-- 用label包並與<input type="checkbox">放在一起的標籤, 點選時可以觸發checkbox -->
+                        <input type="checkbox" name="" id="" class="check-box" v-model="isNormalMode">
+                        <span class="btn" :class="{btnDark: isNormalMode}"></span>
+                    </label>
+                </span>
+            </header>
+
+            <main>
+                <div class="articles">
+                    <div v-for="(articleItem ,articleId) in search">
+                        <!-- <p v-if='isSomething'>沒東西</p> -->
+                        <article class="articleItem.articleClass" :class="{articleDark: isNormalMode}">
+                            <p class="date articleItem.dateClass"><i
+                                    class="fas fa-calendar-alt"></i>{{articleItem.date}}</p>
+                            <h2 :class="{h2Dark: isNormalMode}">{{articleItem.title}}</h2>
+                            <section class="content articleItem.contentClass">
+                                {{articleItem.content}}
+                            </section>
+                            <section class="browse articles.browseClass">
+                                <div class="tags">
+                                    <i class="fas fa-tags"></i>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[0]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[1]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[2]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[3]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[4]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[5]}}</button>
+                                </div>
+                                <button class="readMore" :class="{readMoreDark: isNormalMode}">Read More</button>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="aboutMe" :class="{aboutMeDark: isNormalMode}">
+                        <img src="./photo.jpg" alt="R.U." class="photo" :class="{photoDark: isNormalMode}">
+                        <h3 :class="{h3Dark: isNormalMode}">R.U.</h3>
+                        <div class="information">
+                            <p>國立台灣藝術大學</p>
+                            <p>多媒體動畫藝術學系</p>
+                            <p>NTUA MAA</p>
+                            <p>前端開發者</p>
+                            <p>Front-End Developer</p>
+                            <p>歡迎來到我的學習紀錄部落格 : )</p>
+                        </div>
+                    </div>
+                    <div class="page-button">
+                        <button class="page prev" :class="{pageDark: isNormalMode}" v-on:click="prevPage"><i
+                                class="fas fa-arrow-left" :class="{arrowLeftDark: isNormalMode}"></i></button>
+                                <!-- 這邊繼續 -->
+                        <div class="pageNumber" v-for="">
+                            <button class="page page-1" :class="{pageDark: isNormalMode}">1</button>
+                            <button class="page page-2" :class="{pageDark: isNormalMode}">2</button>
+                            <button class="page page-3" :class="{pageDark: isNormalMode}">3</button>
+                            <button class="page page-4" :class="{pageDark: isNormalMode}">4</button>
+                            <button class="page page-5" :class="{pageDark: isNormalMode}">5</button>
+                        </div>
+                        <button class="page next" :class="{pageDark: isNormalMode}" v-on:click="nextPage"><i
+                                class="fas fa-arrow-right" :class="{arrowRightDark: isNormalMode}"></i></button>
+                    </div>
+                    <div class="searcher">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="search..." v-model="searchInput" class="searchBar"
+                            :class="{searchBarDark: isNormalMode}">
+                    </div>
+                    <div class="keys">
+                        <button class="classification chapters" :class="{classificationDark: isNormalMode}">
+                            <p>全部文章</p>
+                            <p>(0)</p>
+                        </button>
+                        <button class="classification thoughts" :class="{classificationDark: isNormalMode}">
+                            <p>心得雜談</p>
+                            <p>(0)</p>
+                        </button>
+                        <button class="classification tech" :class="{classificationDark: isNormalMode}">
+                            <p>前端技術</p>
+                            <p>(0)</p>
+                        </button>
+                        <button class="classification interaction" :class="{classificationDark: isNormalMode}">
+                            <p>互動藝術</p>
+                            <p>(0)</p>
+                        </button>
+
+                    </div>
+                </aside>
+            </main>
+
+            <footer>Copyright © 2020 R.U.. All rights reserved.</footer>
+
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./script.js"></script>
+
+</html>
