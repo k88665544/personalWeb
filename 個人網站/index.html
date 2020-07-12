@@ -34,7 +34,7 @@
                 <div class="articles">
                     <div v-for="(articleItem ,articleId) in search">
                         <!-- <p v-if='isSomething'>沒東西</p> -->
-                        <article class="articleItem.articleClass" :class="{articleDark: isNormalMode}"> 
+                        <article class="articleItem.articleClass" :class="{articleDark: isNormalMode}">
                             <p class="date articleItem.dateClass"><i
                                     class="fas fa-calendar-alt"></i>{{articleItem.date}}</p>
                             <h2 :class="{h2Dark: isNormalMode}">{{articleItem.title}}</h2>
@@ -44,12 +44,18 @@
                             <section class="browse articles.browseClass">
                                 <div class="tags">
                                     <i class="fas fa-tags"></i>
-                                    <button class="tagsClass" :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[0]}}</button>
-                                    <button class="tagsClass" :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[1]}}</button>
-                                    <button class="tagsClass" :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[2]}}</button>
-                                    <button class="tagsClass" :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[3]}}</button>
-                                    <button class="tagsClass" :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[4]}}</button>
-                                    <button class="tagsClass" :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[5]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[0]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[1]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[2]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[3]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[4]}}</button>
+                                    <button class="tagsClass"
+                                        :class="{tagsClassDark: isNormalMode}">{{articleItem.tags[5]}}</button>
                                 </div>
                                 <button class="readMore" :class="{readMoreDark: isNormalMode}">Read More</button>
                             </section>
@@ -71,17 +77,23 @@
                         </div>
                     </div>
                     <div class="page-button">
-                        <button class="page prev" :class="{pageDark: isNormalMode}"><i class="fas fa-arrow-left" :class="{arrowLeftDark: isNormalMode}"></i></button>
-                        <button class="page page-1" :class="{pageDark: isNormalMode}">1</button>
-                        <button class="page page-2" :class="{pageDark: isNormalMode}">2</button>
-                        <button class="page page-3" :class="{pageDark: isNormalMode}">3</button>
-                        <button class="page page-4" :class="{pageDark: isNormalMode}">4</button>
-                        <button class="page page-5" :class="{pageDark: isNormalMode}">5</button>
-                        <button class="page next" :class="{pageDark: isNormalMode}"><i class="fas fa-arrow-right" :class="{arrowRightDark: isNormalMode}"></i></button>
+                        <button class="page prev" :class="{pageDark: isNormalMode}" v-on:click="prevPage"><i
+                                class="fas fa-arrow-left" :class="{arrowLeftDark: isNormalMode}"></i></button>
+                                <!-- 這邊繼續 -->
+                        <div class="pageNumber" v-for="">
+                            <button class="page page-1" :class="{pageDark: isNormalMode}">1</button>
+                            <button class="page page-2" :class="{pageDark: isNormalMode}">2</button>
+                            <button class="page page-3" :class="{pageDark: isNormalMode}">3</button>
+                            <button class="page page-4" :class="{pageDark: isNormalMode}">4</button>
+                            <button class="page page-5" :class="{pageDark: isNormalMode}">5</button>
+                        </div>
+                        <button class="page next" :class="{pageDark: isNormalMode}" v-on:click="nextPage"><i
+                                class="fas fa-arrow-right" :class="{arrowRightDark: isNormalMode}"></i></button>
                     </div>
                     <div class="searcher">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="search..." v-model="searchInput" class="searchBar" :class="{searchBarDark: isNormalMode}">
+                        <input type="text" placeholder="search..." v-model="searchInput" class="searchBar"
+                            :class="{searchBarDark: isNormalMode}">
                     </div>
                     <div class="keys">
                         <button class="classification chapters" :class="{classificationDark: isNormalMode}">
@@ -106,7 +118,7 @@
             </main>
 
             <footer>Copyright © 2020 R.U.. All rights reserved.</footer>
-            
+
         </div>
     </div>
 

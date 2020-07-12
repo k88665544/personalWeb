@@ -465,6 +465,19 @@ aside {
   width: 260px;
 }
 
+.pageNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 182px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .prev,
 .next {
   -webkit-box-shadow: -10px -10px 10px #F7F9FA, 10px 10px 10px #9ea5b6;
